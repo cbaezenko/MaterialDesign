@@ -1,7 +1,9 @@
 package com.example.baeza.materialdesignandroid;
 
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +17,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +66,18 @@ public class MainActivity extends AppCompatActivity {
 
         //add viewPager to tabs
         tabs.setupWithViewPager(viewPager);
+
+        //adding floating action button to bottom right of main view
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view,"Hello Snackbar!",
+                        Snackbar.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     //add fragments to tabs
